@@ -24,6 +24,7 @@ composer install
 - `vendor/` : Contient les dépendances (généré par Composer)
 - `composer.json` : Configuration du projet et ses dépendances
 - `composer.lock` : Verrouille les versions exactes des dépendances
+- `phpunit.xml` : Configuration de PHPUnit
 
 ## Configuration
 
@@ -34,9 +35,21 @@ Le projet est configuré avec :
   - `App\` pour le code source
   - `Tests\` pour les tests
 
+### Configuration de PHPUnit
+
+Le fichier `phpunit.xml` configure :
+- L'autoloading via Composer
+- Le répertoire des tests (`./tests`)
+- La couverture de code (`./src`)
+- Les rapports de test en couleur
+
 ## Exécution des Tests
 
-Pour exécuter les tests :
+Pour exécuter les tests, vous avez deux options :
 ```bash
-./vendor/bin/phpunit tests
+./vendor/bin/phpunit
+# ou
+composer test
 ```
+
+Les tests doivent être placés dans le dossier `tests/` et suivre la convention de nommage `*Test.php`.
