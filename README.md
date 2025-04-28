@@ -45,14 +45,6 @@ Le fichier `phpunit.xml` configure :
 - La couverture de code (`./src`)
 - Les rapports de test en couleur
 
-## Exécution des Tests
-
-Pour exécuter les tests, vous avez deux options :
-```bash
-./vendor/bin/phpunit
-# ou
-composer test
-```
 
 Les tests doivent être placés dans le dossier `tests/` et suivre la convention de nommage `*Test.php`.
 
@@ -60,51 +52,30 @@ Les tests doivent être placés dans le dossier `tests/` et suivre la convention
 
 Le projet inclut un exemple simple avec la classe `Math` qui démontre les concepts de base des tests unitaires :
 
-```php
-// src/Math.php
-namespace App;
+![Math](./Images/math.php1.png)
 
-class Math
-{
-    public function addition(int $a, int $b): int
-    {
-        return $a + $b;
-    }
+![Math](./Images/mathTest.png)
 
-    public function soustraction(int $a, int $b): int
-    {
-        return $a - $b;
-    }
-}
+## Exécution des Tests
 
-// tests/MathTest.php
-namespace Tests;
+Pour exécuter les tests, vous avez deux options :
+```bash
+./vendor/bin/phpunit
+# ou
+composer test
 
-use App\Math;
-use PHPUnit\Framework\TestCase;
+![Math](./Images/test1.png)
 
-class MathTest extends TestCase
-{
-    private Math $math;
 
-    protected function setUp(): void
-    {
-        $this->math = new Math();
-    }
+```
 
-    public function testAddition(): void
-    {
-        $this->assertEquals(4, $this->math->addition(2, 2));
-        $this->assertEquals(0, $this->math->addition(0, 0));
-        $this->assertEquals(-2, $this->math->addition(-1, -1));
-        $this->assertEquals(1, $this->math->addition(2, -1));
-    }
+### Tester les erreurs
 
-    public function testSoustraction(): void
-    {
-        $this->assertEquals(0, $this->math->soustraction(2, 2));
-        $this->assertEquals(0, $this->math->soustraction(0, 0));
-        $this->assertEquals(0, $this->math->soustraction(-1, -1));
-        $this->assertEquals(3, $this->math->soustraction(2, -1));
-    }
-}
+Dans ma méthode, je retire une virgule pour créer une erreur lors du test:
+
+![Math](./Images/Erreur1.png)
+![Math](./Images/Erreur2.png)
+
+
+
+
