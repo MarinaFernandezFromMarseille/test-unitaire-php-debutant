@@ -20,7 +20,9 @@ composer install
 ## Structure du Projet
 
 - `src/` : Contient le code source de l'application
+  - `Math.php` : Classe de base avec des opérations mathématiques
 - `tests/` : Contient les tests unitaires
+  - `MathTest.php` : Tests pour la classe Math
 - `vendor/` : Contient les dépendances (généré par Composer)
 - `composer.json` : Configuration du projet et ses dépendances
 - `composer.lock` : Verrouille les versions exactes des dépendances
@@ -53,3 +55,43 @@ composer test
 ```
 
 Les tests doivent être placés dans le dossier `tests/` et suivre la convention de nommage `*Test.php`.
+
+## Exemple de Test
+
+Le projet inclut un exemple simple avec la classe `Math` qui démontre les concepts de base des tests unitaires :
+
+```php
+// src/Math.php
+namespace App;
+
+class Math
+{
+    public function addition(int $a, int $b): int
+    {
+        return $a + $b;
+    }
+}
+
+// tests/MathTest.php
+namespace Tests;
+
+use App\Math;
+use PHPUnit\Framework\TestCase;
+
+class MathTest extends TestCase
+{
+    private Math $math;
+
+    protected function setUp(): void
+    {
+        $this->math = new Math();
+    }
+
+    public function testAddition(): void
+    {
+        $this->assertEquals(4, $this->math->addition(2, 2));
+        $this->assertEquals(0, $this->math->addition(0, 0));
+        $this->assertEquals(-2, $this->math->addition(-1, -1));
+        $this->assertEquals(1, $this->math->addition(2, -1));
+    }
+}
