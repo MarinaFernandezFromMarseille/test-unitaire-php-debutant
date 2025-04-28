@@ -54,7 +54,7 @@ Le projet inclut un exemple simple avec la classe `Math` qui démontre les conce
 
 ![Math](./Images/math.php1.png)
 
-![Math](./Images/mathTest.png)
+![Math](./Images/MathTest.png)
 
 ## Exécution des Tests
 
@@ -74,7 +74,7 @@ composer test
 Dans ma méthode, je retire une virgule pour créer une erreur lors du test:
 
 ![Math](./Images/Erreur1.png)
-![Math](./Images/Erreur2.png)
+![Math](./Images/erreur.png)
 
 
 
