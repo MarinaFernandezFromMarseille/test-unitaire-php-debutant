@@ -70,6 +70,11 @@ class Math
     {
         return $a + $b;
     }
+
+    public function soustraction(int $a, int $b): int
+    {
+        return $a - $b;
+    }
 }
 
 // tests/MathTest.php
@@ -93,5 +98,13 @@ class MathTest extends TestCase
         $this->assertEquals(0, $this->math->addition(0, 0));
         $this->assertEquals(-2, $this->math->addition(-1, -1));
         $this->assertEquals(1, $this->math->addition(2, -1));
+    }
+
+    public function testSoustraction(): void
+    {
+        $this->assertEquals(0, $this->math->soustraction(2, 2));
+        $this->assertEquals(0, $this->math->soustraction(0, 0));
+        $this->assertEquals(0, $this->math->soustraction(-1, -1));
+        $this->assertEquals(3, $this->math->soustraction(2, -1));
     }
 }
