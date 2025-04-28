@@ -76,6 +76,20 @@ Dans ma méthode, je retire une virgule pour créer une erreur lors du test:
 ![Math](./Images/Erreur1.png)
 ![Math](./Images/erreur.png)
 
+### Correction des erreurs
+
+Je rajoute ma virgule là où je l'ai supprimée pour que l'erreur disparaisse et je run à nouveau ma commande de test
+
+![Math](./Images/Erreur2.png)
+
+L'erreur a disparu!
+
+![Math](./Images/goodagain.png)
+
+
+
+
+
 
 
 
